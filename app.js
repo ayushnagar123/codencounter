@@ -6,7 +6,9 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const hbs = require('hbs')
 const app = express()
-const mysql = require('mysql')
+const mysql = require('mysql2')
+const userRoutes = require('./users')
+var weather = require('openweather-apis');
 var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
 const nodemailer = require('nodemailer')
@@ -125,63 +127,92 @@ app.post('/signup',(req,res)=>{
         })
 })
 
-app.get('/city/:id',(req,res)=>{
-    var id = req.params.id;
-    var query=`select * from INFO where City ='${id}' or PLACES='${id}';`;
-    var city;
-    conn.query(query,function(err,cit){
-        if(err){
-            throw err;
-        }
-        else{ 
-            city=cit;
-        }
-    })
-    var query=`select heading from INFO where City ='${id}' or PLACES='${id}';`;
-    conn.query(
-        query,function(err,explore){
-            if(err){
-                console.log(err)
-                res.redirect('/registration')
-            }
-            else{
-                query=`select food from INFO where City ='${id}' or PLACES='${id}';`;
-                conn.query(query,function(err,food){
-                    if(err){
-                        console.log(err)
-                        res.redirect('/registration')
-                    }
-                    else{
-                        query=`select culture from INFO where City ='${id}' or PLACES='${id}';`;
-                        conn.query(query,function(err,culture){
-                            if(err){
-                                console.log(err)
-                                res.redirect('/registration')
-                            }
-                            else{
-                                query=`select places_v from INFO where City ='${id}' or PLACES='${id}';`;
-                                conn.query(query,function(err,places){
-                                    if(err){
-                                        console.log(err)
-                                        res.redirect('/registration')
-                                    }
-                                    else{
-                                        res.render('city',{
-                                            city:id,
-                                            explore:explore,
-                                            food:food,
-                                            culture:culture,
-                                            places:places
-                                        })
-                                    }
-                                })
-                            }
-                        })
-                    }
-                })
-            }
-        })
-})
+app.use('/city',userRoutes);
+
+// app.get('/city/:id',(req,res)=>{
+//     var id = req.params.id;
+//     console.log(id);
+//     var query=`select * from info where City ='${id}' or PLACES='${id}';`;
+//     var city=`${id}`;
+//     // weather.setLang('it');
+//     // weather.setCity(`new york`);
+//     // weather.getTemperature(function(err, temp){
+//     //     console.log(temp);
+//     // });
+//     conn.query(query,function(err,cit){
+//         if(err){
+//             throw err;
+//         }
+//         else{ 
+//             city=cit[0];
+//         }
+//     })
+//     var linklist=[];
+//         var query=`select * from new_table where City ='${id}';`;
+//         conn.query(query,(err,link)=>{
+//         if(err){
+//             console.log(err);
+//         }
+//         else{
+//             var resultArray = Object.values(JSON.parse(JSON.stringify(link)))
+//             // linklist.push({link:link[0].link1})
+//             // linklist.push({link:link[0].link2})
+//             // linklist.push({link:link[0].link3})
+//             // linklist.push({link:link[0].link4})
+//             // linklist.push({link:link[0].link5})
+//             resultArray.forEach(function(v){ linklist.push(v) })
+            
+//         }
+//     })
+    
+//     var query=`select heading from info where City ='${id}' or PLACES='${id}';`;
+//     conn.query(
+//         query,function(err,explore){
+//             if(err){
+//                 console.log(err)
+//                 // res.redirect('/registration')
+//             }
+//             else{
+//                 query=`select food from info where City ='${id}' or PLACES='${id}';`;
+//                 conn.query(query,function(err,food){
+//                     if(err){
+//                         console.log(err)
+//                         // res.redirect('/registration')
+//                     }
+//                     else{
+//                         query=`select culture from info where City ='${id}' or PLACES='${id}';`;
+//                         conn.query(query,function(err,culture){
+//                             if(err){
+//                                 console.log(err)
+//                                 // res.redirect('/registration')
+//                             }
+//                             else{
+//                                 query=`select places_v from info where City ='${id}' or PLACES='${id}';`;
+//                                 conn.query(query,function(err,places){
+//                                     if(err){
+//                                         console.log(err)
+//                                         // res.redirect('/registration')
+//                                     }
+//                                     else{
+//                                         sender={explore:explore,food:food,culture:culture,places:places}
+//                                         console.log(explore.heading)
+//                                         res.render('city',{
+//                                             city:id,
+//                                             explore:sender['explore'],
+//                                             food:sender['food'],
+//                                             culture:culture[0],
+//                                             places:places[0],
+//                                             linklist:linklist
+//                                         })
+//                                     }
+//                                 })
+//                             }
+//                         })
+//                     }
+//                 })
+//             }
+//         })
+// })
 
 app.post('/mailme',(req,res)=>{
     let transporter = nodemailer.createTransport({
@@ -205,6 +236,29 @@ app.post('/mailme',(req,res)=>{
       if(err) console.log(err);
       else console.log('email sent');
   });
+  /*
+for demo and quick start place this code in your app.js or server.js
+please run 'npm install puretext --save' in terminal
+*/
+
+const puretext = require('puretext');
+require('request');
+
+let text = {
+    // To Number is the number you will be sending the text to.
+    toNumber: '+91-996-806-8330',
+    // From number is the number you will buy from your admin dashboard
+    fromNumber: '+919717504706',
+    // Text Content
+    smsBody: 'Sending SMS using Node.js',
+    //Sign up for an account to get an API Token
+    apiToken: 'testaccount'
+};
+
+puretext.send(text, function (err, response) {
+  if(err) console.log(err);
+  else console.log(response)
+})
   res.redirect('/vac');
 })
 
@@ -217,7 +271,7 @@ app.listen(port,(err)=>{
     console.log('connected')
     conn = mysql.createConnection({
         host:'localhost',
-        database: 'nagaro',
+        database: 'naggaro',
         user: 'ayush',
         password: 'ayush'
     })

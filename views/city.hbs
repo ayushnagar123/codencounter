@@ -30,22 +30,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <!-- Header -->
 <header class="w3-display-container w3-content w3-hide-small" style="max-width:1400px">
 
-  <img class="w3-image" src="logo.png" width="200" height="200">
+  <img class="w3-image" src="/images/logo.png" width="200" height="200">
 <div class="w3-display-middle" style="width:65%">
     <div class="w3-bar w3-black">
       <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Flight');"><i class="fa fa-plane w3-margin-right"></i></button>
    </div>
-
-
-    
     <!-- Tabs -->
     <div id="Flight" class="w3-container w3-white w3-padding-16 myLink">
       <h3>Welcome to {{city}}</h3>
-     
     </div>
-
-    
-
     
 </header>
 
@@ -53,11 +46,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <div class="w3-content" style="max-width:1100px;">
 
   <!-- Good offers -->
-  
   <div class="w3-row-padding w3-text-white w3-large">
     <div class="w3-half w3-margin-bottom">
       <div class="w3-display-container">
-        <img src="https://ic.pics.livejournal.com/nmt_sin/1378887/34350/34350_original.jpg" style="width:100%">
+        <img src = "{{link1}}" style="width:100%">
         <span class="w3-display-bottomleft w3-padding" style="color:black">{{city}}</span>
       </div>
     </div>
@@ -65,13 +57,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
       <div class="w3-row-padding" style="margin:0 -16px">
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="https://www.indianspice.co.za/wp-content/uploads/2018/08/chennai_HB.jpg" style="width:100%">
+            <img src="{{link2}}" style="width:100%">
             <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
           </div>
         </div>
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="https://static.toiimg.com/thumb/53612159/main.jpg?width=748&height=499" style="width:100%">
+            <img src="{{link3}}" style="width:100%">
             <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
           </div>
         </div>
@@ -79,13 +71,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
       <div class="w3-row-padding" style="margin:0 -16px">
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="https://static-news.moneycontrol.com/static-mcnews/2018/03/chennai_Madras-High_Court-770x433.jpg" style="width:100%">
+            <img src="{{link4}}" style="width:100%">
             <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
           </div>
         </div>
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="https://www.livemint.com/rf/Image-621x414/LiveMint/Period2/2017/09/29/Photos/Processed/Fivefalls-kUYC--621x414@LiveMint.jpg" style="width:100%">
+            <img src="{{link5}}" style="width:100%">
             <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
           </div>
         </div>
