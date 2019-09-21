@@ -1,0 +1,29 @@
+
+<html>
+    {{>header}}
+<body>
+    <div class="container-fluid" id="flex">
+        {{>nav}}
+        <div>
+            <form method="POST" action="/">
+	 <div class="login-box">
+	 	<h1> Login </h1>
+	 	<div class="textbox">
+	 		<i class="fas fa-user"></i>
+	 		<input type="email" name="email" id="email" placeholder="Email" class="form-control" required>
+	 	</div>
+	 	<div class="textbox">
+	 		<i class="fas fa-lock"></i>
+	 		<input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
+		 </div>
+		<div class="not-a-user">
+			Not a user yet? 
+			<a href="registration.html">Register</a>
+		</div>
+	 	<input class ="btn" type="submit" value="Log In" name="submit">
+	 </div>
+	</form>
+    </div>
+        {{>footer}}
+    </div>
+</body>
