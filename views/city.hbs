@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <title>{{city}}</title>
-<?php
+{{!-- <?php
 date_default_timezone_set('Asia/Kolkata');
 include 'connection.php';
 include 'insertcom.php';
 
-?>
+?> --}}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -22,8 +22,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 
 <!-- Navigation Bar -->
 <div class="w3-bar w3-white w3-border-bottom w3-xlarge">
-<a href="../index.php" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class=" w3-margin-right">Home</i></b></a>
   <a href="../about.php" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class=" w3-margin-right">About us</i></b></a>
+<a href="../index.php" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class=" w3-margin-right">Home</i></b></a>
   <a href="#contact" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class=" w3-margin-right">Contact</i></b></a>
 </div>
 
@@ -36,8 +36,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
       <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Flight');"><i class="fa fa-plane w3-margin-right"></i></button>
    </div>
 
-    
 
+    
     <!-- Tabs -->
     <div id="Flight" class="w3-container w3-white w3-padding-16 myLink">
       <h3>Welcome to {{city}}</h3>
@@ -65,7 +65,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
       <div class="w3-row-padding" style="margin:0 -16px">
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="https://www.indianspice.co.za/wp-content/uploads/2018/08/{{city}}_HB.jpg" style="width:100%">
+            <img src="https://www.indianspice.co.za/wp-content/uploads/2018/08/chennai_HB.jpg" style="width:100%">
             <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
           </div>
         </div>
@@ -79,7 +79,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
       <div class="w3-row-padding" style="margin:0 -16px">
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="https://static-news.moneycontrol.com/static-mcnews/2018/03/{{city}}_Madras-High_Court-770x433.jpg" style="width:100%">
+            <img src="https://static-news.moneycontrol.com/static-mcnews/2018/03/chennai_Madras-High_Court-770x433.jpg" style="width:100%">
             <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
           </div>
         </div>
@@ -98,7 +98,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
   <div class="w3-container">
     <h3>Explore {{city}}</h3>
     <p>
-<?php
+      {{explore}}
+{{!-- <?php
         
        $_SESSION['link']=$_GET['link'];
        $q=$_SESSION['link'];
@@ -125,7 +126,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
         }
 
         ?>
-
+ --}}
 
 </p>
   </div>
@@ -145,7 +146,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <div id="food" class="tabcontent">
   <h3>Food</h3>
   <p>
-
+    {{food}}
+{{!-- 
 <?php
        
        $_SESSION['link']=$_GET['link'];
@@ -175,7 +177,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
     
 
 
-        ?>
+        ?> --}}
 
 
 </p>
@@ -183,8 +185,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <div id="cult" class="tabcontent">
   <h3>Culture</h3>
   <p>
-
-<?php
+    {{culture}}
+{{!-- <?php
        
        $_SESSION['link']=$_GET['link'];
        $q=$_SESSION['link'];
@@ -214,14 +216,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 
 
         ?>
-
+ --}}
 
 </p>
   </div>
 <div id="plac" class="tabcontent">
   <h3>Places to visit</h3>
   <p>
-
+    {{places}}
+{{!-- 
 <?php
        
        $_SESSION['link']=$_GET['link'];
@@ -252,7 +255,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 
 
         ?>
-
+ --}}
 
 </p>
   </div>
