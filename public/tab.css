@@ -1,0 +1,86 @@
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.form-des
+{
+	
+}
+.inp-des
+{
+	margin: 4px;
+}
+textarea
+{
+	height: 100px;
+	width: 600px;
+	resize: none;
+	border: 2px solid #1e90ff;
+	box-shadow: 3px 3px #d3d3d3;
+}
+#id-des
+{
+	background-color: #fff;
+	color: #000;
+	height: 30px;
+	width: 200px;
+	border: 2px solid #1e90ff;
+	padding: 4px;
+	box-shadow: 3px 3px #d3d3d3;
+}
+#sub-des
+{
+	background-color: #1e90ff;
+	border: 2px solid black;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 4px;
+}
+#sub-des:hover
+{
+	opacity: .8;
+}

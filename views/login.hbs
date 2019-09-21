@@ -1,11 +1,12 @@
-
 <html>
-    {{>header}}
+<head>
+<link rel="stylesheet" type="text/css" href="login.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+</head>
 <body>
-    <div class="container-fluid" id="flex">
-        {{>nav}}
-        <div>
-            <form method="POST" action="/">
+	<form method="POST" action="login.php">
 	 <div class="login-box">
 	 	<h1> Login </h1>
 	 	<div class="textbox">
@@ -23,7 +24,5 @@
 	 	<input class ="btn" type="submit" value="Log In" name="submit">
 	 </div>
 	</form>
-    </div>
-        {{>footer}}
-    </div>
 </body>
+</html>

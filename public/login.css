@@ -1,0 +1,69 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: "Times New Roman";
+	background: url("bg.jpg") no-repeat;
+	background-size: cover;
+}
+.login-box
+{
+	width: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-80%,-50%);
+	color: white;
+}
+.login-box h1
+{
+	float: left;
+	font-size: 50px;
+	font-family: 'Concert One', cursive;
+	margin-bottom: 50px;
+	padding: 11px
+}
+.textbox
+{
+	width: 100%;
+	overflow: hidden;
+	font-size: 20px;
+	padding: 8px;
+	margin: 8px;
+	border-bottom: 1px solid black;
+}
+.textbox input
+{
+	border: none;
+	outline: none;
+	background: none;
+	color: black;
+	font-family: 'Inconsolata', monospace;
+	font-size: 20px;
+	width: 80%;
+	float: right;
+	margin: 6px;
+	font-weight: bold;
+}
+.btn
+{
+	width: 100%;
+	background: none;
+	border: 2px solid blue;
+	color: black;
+	padding: 5px;
+	font-size: 18px;
+	margin: 15px;
+}
+::placeholder
+{
+	color: black;
+	font-family: "comic sans ms";
+	font-weight: bold;
+}
+.not-a-user
+{
+	margin: 8px;
+	margin-top: 18px;
+	font-weight: bold;
+}		

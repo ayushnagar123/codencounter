@@ -1,0 +1,68 @@
+<!Doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="registration.css">
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <meta charset="UTF-8">
+        <title>Registration Form</title>
+    </head>
+    <body>
+        <div class="container">
+        <!-----heading----->
+            
+        <header class="heading">Registration Form</header><hr></hr>
+            <!-----Form starting-----> 
+            
+            <form method="POST" action="registration.php">
+            <div>
+            <!-----For Name----->
+                <div>
+                    <label class="name">Name :</label> 
+                    <input type="text" name="name" id="name" placeholder="Enter your Name" class="form-control" required>
+                </div>
+
+            <!-----Age----->
+                <div>
+                    <label class="age">Age :</label>
+                    <input type="number" name="age" id="age" placeholder="Enter your Age" class="form-control" required>
+                </div>
+                               
+            <!-----For email----->
+                <div>
+                    <label class="email" >Email :</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your Email" class="form-control" required>                       
+                </div>
+                                
+            <!-----For Phone number----->
+                <div>
+                    <label class="contact">Contact No :</label>
+                    <input type="number" name="contact" id="contact" placeholder="Enter your Contact No" class="form-control" required>
+                </div>
+            
+            <!-----For Password and ----->
+                <div>
+                    <label class="password">Password :</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your Password" class="form-control" required>
+                </div>
+
+            <!-----For Gender----->    
+                <div>
+                    <label class="gender">Gender :</label>
+                    <input type="radio" name="gender" id="gender" value="male"><label class="label" required>Male</label>   
+                    <input type="radio" name="gender" id="gender" value="female"><label class="label">Female</label>
+                </div>
+
+            <!-----For Submit and Reset----->
+                <div>
+                    <input type="submit" name="submit" id="submit" value="Submit">
+                    <input type="reset" name="reset" id="reset" value="Reset">
+                </div>    
+            </div>
+        </form>	 
+        </div>
+    </body>		
+</html>
+	 
+	 

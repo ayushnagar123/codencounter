@@ -10,38 +10,61 @@ app.use(urlencodedParser);
 
 app.use(bodyParser.json())
 
-app.use(express.static(__dirname+ '/public'));
+app.use(express.static(__dirname + '/public'));
 
-app.set('views',__dirname+'/views')
+app.set('views', __dirname + '/views')
 app.set('view engine', 'hbs');
 
 hbs.registerPartials(__dirname + '/views/partials');
 
-app.get('/',(req,res)=>{
-    res.render('index',{
-        body:'index'
-    })
+app.get('/', (req, res) => {
+    res.render('index')
 })
 
-app.get('/login',(req,res)=>{
-    res.render('login',{
-        body:'login'
-    })
+
+app.get('/registration', (req, res) => {
+    res.render('registration')
 })
 
-app.get('/signup',(req,res)=>{
-    res.render('signup',{
-        body:'signup'
-    })
+app.get('/login', (req, res) => {
+    res.render('login')
 })
 
-app.post('/',(req,res)=>{
+app.get('/beaches', (req, res) => {
+    res.render('beaches')
+})
+
+app.get('/heritage', (req, res) => {
+    res.render('heritage')
+})
+
+app.get('/hill', (req, res) => {
+    res.render('hill')
+})
+
+app.get('/leisure', (req, res) => {
+    res.render('leisure')
+})
+
+app.get('/wildlife', (req, res) => {
+    res.render('wildlife')
+})
+
+app.get('/romantic', (req, res) => {
+    res.render('romantic')
+})
+
+app.get('/vac', (req, res) => {
+    res.render('vac')
+})
+
+app.post('/', (req, res) => {
     var email = req.body.email
     res.send(email)
 
 })
 
-app.post('/signup',(req,res)=>{
+app.post('/signup', (req, res) => {
 
 })
 
