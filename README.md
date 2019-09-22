@@ -13,4 +13,4 @@
 7. Google Maps.
 8. Weather API.
 9. Recommender system for hotels and cabs. (can be used for raising monetry funds)
-10. Foreign tourist support which in turns employement. (can be used for raising monetry funds)
+10. Foreign tourist support which in turns provides employement. (can be used for raising monetry funds)
