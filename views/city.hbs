@@ -11,173 +11,167 @@
             body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
             .myLink {display: none}
         </style>
+        <body class="w3-light-grey">
 
-    <body class="w3-light-grey">
-
-    <!-- Navigation Bar -->
-    <div class="w3-bar w3-white w3-border-bottom w3-xlarge">
-    <a href="/about" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class=" w3-margin-right">About us</i></b></a>
-    <a href="/" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class=" w3-margin-right">Home</i></b></a>
-    <a href="#contact" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class=" w3-margin-right">Contact</i></b></a>
-    </div>
-
-    <!-- Header -->
-    <header class="w3-display-container w3-content w3-hide-small" style="max-width:1400px">
-
-    <img class="w3-image" src="/images/logo.png" width="200" height="200">
-    <div class="w3-display-middle" style="width:65%">
-        <div class="w3-bar w3-black">
-        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Flight');"><i class="fa fa-plane w3-margin-right"></i></button>
-    </div>
-        <!-- Tabs -->
-        <div id="Flight" class="w3-container w3-white w3-padding-16 myLink">
-        <h3>Welcome to {{city}}</h3>
+        <!-- Navigation Bar -->
+        <div class="w3-bar w3-white w3-border-bottom w3-xlarge">
+            <a href="/about" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class=" w3-margin-right">About us</i></b></a>
+            <a href="/" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class=" w3-margin-right">Home</i></b></a>
+            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class=" w3-margin-right">Contact</i></b></a>
         </div>
+
+        <!-- Header -->
+        <header class="w3-display-container w3-content w3-hide-small" style="max-width:1400px">
+
+            <img class="w3-image" src="/images/logo.png" width="200" height="200">
+            <div class="w3-display-middle" style="width:65%">
+                <div class="w3-bar w3-black">
+                    <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Flight');"><i class="fa fa-plane w3-margin-right"></i></button>
+                </div>
+            <!-- Tabs -->
+                <div id="Flight" class="w3-container w3-white w3-padding-16 myLink">
+                    <h3>Welcome to {{city}}</h3>
+                </div>
+        </header>
+
+        <!-- Page content -->
+        <div class="w3-content" style="max-width:1100px;">
+
+        <!-- Good offers -->
+            <div class="w3-row-padding w3-text-white w3-large">
+                <div class="w3-half w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <img src = "{{link1}}" style="width:100%">
+                        <span class="w3-display-bottomleft w3-padding" style="color:black">{{city}}</span>
+                    </div>
+                </div>
+                <div class="w3-half">
+                    <div class="w3-row-padding" style="margin:0 -16px">
+                        <div class="w3-half w3-margin-bottom">
+                            <div class="w3-display-container">
+                                <img src="{{link2}}" style="width:100%">
+                                <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
+                            </div>
+                        </div>
+                        <div class="w3-half w3-margin-bottom">
+                            <div class="w3-display-container">
+                                <img src="{{link3}}" style="width:100%">
+                                <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-row-padding" style="margin:0 -16px">
+                        <div class="w3-half w3-margin-bottom">
+                            <div class="w3-display-container">
+                                <img src="{{link4}}" style="width:100%">
+                                <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
+                            </div>
+                        </div>
+                        <div class="w3-half w3-margin-bottom">
+                            <div class="w3-display-container">
+                                <img src="{{link5}}" style="width:100%">
+                                <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Explore Nature -->
+        <div class="w3-container">
+            <h3>Explore {{city}}</h3>
+            <p>
+                {{explore}}
+            </p>
+        </div>
+
+        <!-- tabs -->
+        <div class="w3-container">
+            <h3>Explore Nature</h3>
+            <p>
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'food')">Food</button>
+                    <button class="tablinks" onclick="openCity(event, 'cult')">Culture</button>
+                    <button class="tablinks" onclick="openCity(event, 'plac')">Places to visit</button>
+                    <button class="tablinks" onclick="openCity(event, 'loc')">Location</button>
+                </div>
+                <div id="food" class="tabcontent">
+                    <h3>Food</h3>
+                    <p>
+                        {{food}}
+                    </p>
+                </div>
+            </p>
+            <div id="cult" class="tabcontent">
+                <h3>Culture</h3>
+                <p>
+                    {{culture}}
+                </p>
+            </div>
+            <div id="plac" class="tabcontent">
+                <h3>Places to visit</h3>
+                <p>
+                    {{places}}
+                </p>
+            </div>
+            <div id="loc" class="tabcontent">
+            <h3>Location</h3>
+                <div>
+                <iframe src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" width="1050" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        <br><br>
+        <!-- Contact -->
+            <div class="w3-container">
+                <h2>Contact</h2>
+                <i class="fa fa-map-marker" style="width:30px"></i> Delhi<br>
+                <i class="fa fa-phone" style="width:30px"></i> Phone: 9968068330<br>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: siddhu.15798@gmail.com<br>
+                <form action="/mailme" target="_blank" method="POST">
+                    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+                    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+                    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
+                    <p><button class="w3-button w3-black w3-padding-large" type="submit">SEND MESSAGE</button></p>
+                </form>
+            </div>
         
-    </header>
-
-    <!-- Page content -->
-    <div class="w3-content" style="max-width:1100px;">
-
-    <!-- Good offers -->
-    <div class="w3-row-padding w3-text-white w3-large">
-        <div class="w3-half w3-margin-bottom">
-        <div class="w3-display-container">
-            <img src = "{{link1}}" style="width:100%">
-            <span class="w3-display-bottomleft w3-padding" style="color:black">{{city}}</span>
+        <!-- End page content -->
         </div>
-        </div>
-        <div class="w3-half">
-        <div class="w3-row-padding" style="margin:0 -16px">
-            <div class="w3-half w3-margin-bottom">
-            <div class="w3-display-container">
-                <img src="{{link2}}" style="width:100%">
-                <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
-            </div>
-            </div>
-            <div class="w3-half w3-margin-bottom">
-            <div class="w3-display-container">
-                <img src="{{link3}}" style="width:100%">
-                <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
-            </div>
-            </div>
-        </div>
-        <div class="w3-row-padding" style="margin:0 -16px">
-            <div class="w3-half w3-margin-bottom">
-            <div class="w3-display-container">
-                <img src="{{link4}}" style="width:100%">
-                <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
-            </div>
-            </div>
-            <div class="w3-half w3-margin-bottom">
-            <div class="w3-display-container">
-                <img src="{{link5}}" style="width:100%">
-                <span class="w3-display-bottomleft w3-padding" style="color:black"></span>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
 
+        <!-- Footer -->
 
-    <!-- Explore Nature -->
-    <div class="w3-container">
-        <h3>Explore {{city}}</h3>
-        <p>
-        {{explore}}
-        </p>
-    </div>
+            <script>
+            // Tabs
+            function openLink(evt, linkName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("myLink");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+            }
+            document.getElementById(linkName).style.display = "block";
+            evt.currentTarget.className += " w3-red";
+            }
+            // Click on the first tablink on load
+            document.getElementsByClassName("tablink")[0].click();
 
-    <!-- tabs -->
-    <div class="w3-container">
-        <h3>Explore Nature</h3>
-        <p>
-        <div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'food')">Food</button>
-    <button class="tablinks" onclick="openCity(event, 'cult')">Culture</button>
-    <button class="tablinks" onclick="openCity(event, 'plac')">Places to visit</button>
-    <button class="tablinks" onclick="openCity(event, 'loc')">Location</button>
-    </div>
-
-
-    <div id="food" class="tabcontent">
-    <h3>Food</h3>
-    <p>
-        {{food}}
-        </p>
-    </div>
-    <div id="cult" class="tabcontent">
-    <h3>Culture</h3>
-    <p>
-        {{culture}}
-
-    </p>
-    </div>
-    <div id="plac" class="tabcontent">
-    <h3>Places to visit</h3>
-    <p>
-        {{places}}
-    </p>
-    </div>
-
-    <div id="loc" class="tabcontent">
-    <h3>Location</h3>
-    
-    <div>
-    <iframe src=""https://maps.googleapis.com/maps/api/js?key=&callback=initMap" width="1200" height="400" frameborder="0" style="border:0" allowfullscreen async defer></iframe>
-    </div>
-    <br><br>
-    <!-- Contact -->
-    <div class="w3-container">
-        <h2>Contact</h2>
-        <i class="fa fa-map-marker" style="width:30px"></i> Delhi<br>
-        <i class="fa fa-phone" style="width:30px"></i> Phone: 9968068330<br>
-        <i class="fa fa-envelope" style="width:30px"> </i> Email: siddhu.15798@gmail.com<br>
-        <form action="script.php" target="_blank" method="POST">
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
-        <p><button class="w3-button w3-black w3-padding-large" type="submit">SEND MESSAGE</button></p>
-        </form>
-    </div>
-    
-    <!-- End page content -->
-    </div>
-
-    <!-- Footer -->
-
-    <script>
-    // Tabs
-    function openLink(evt, linkName) {
-    var i, x, tablinks;
-    x = document.getElementsByClassName("myLink");
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < x.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
-    }
-    document.getElementById(linkName).style.display = "block";
-    evt.currentTarget.className += " w3-red";
-    }
-    // Click on the first tablink on load
-    document.getElementsByClassName("tablink")[0].click();
-
-    function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-    </script>
-
-    </body>
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            </script>
+        </body>
     </html>
