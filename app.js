@@ -78,17 +78,16 @@ app.get('/about', (req, res) => {
     res.render('about')
 })
 
-app.post('/', (req, res) => {
+app.post('/login', (req, res) => {
     var email = req.body.email
     var pass = req.body.password
     var query = 'select * from registration where email="' + email + '" and password="' + pass + '"';
     conn.query(query, (err, result) => {
         if (err) throw err;
-        console.log(result)
         if (result) {
-            res.redirect('/login')
+            res.redirect('/')
         } else {
-            res.redirect('/');
+            res.redirect('/login');
         }
     })
 })
@@ -132,6 +131,40 @@ app.post('/signup', (req, res) => {
 })
 
 app.use('/city', userRoutes);
+
+app.post('/sendfeed',(req,res)=>{
+    var city = req.body.city;
+    var email = req.body.id;
+    var feed = req.body.txt;
+    let date_ob = new Date();
+
+    // current date
+    // adjust 0 before single digit date
+    let date = ("0" + date_ob.getDate()).slice(-2);
+
+    // current month
+    let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+
+    // current year
+    let year = date_ob.getFullYear();
+
+    // current hours
+    let hours = date_ob.getHours();
+
+    // current minutes
+    let minutes = date_ob.getMinutes();
+
+    // prints date & time in YYYY-MM-DD HH:MM:SS format
+    var feed_date= year + "-" + month + "-" + date + " " + hours + ":" + minutes;
+
+    var query = `insert into comments(USER_ID,CDATE,MESSAGE,City) values('${email}','${feed_date}','${feed}','${city}')`;
+    conn.query(query,(err,result)=>{
+        if(err) throw err;
+        console.log('added');
+        res.redirect('/');
+    })
+
+})
 
 app.post('/mailme', (req, res) => {
     let transporter = nodemailer.createTransport({
@@ -190,9 +223,9 @@ app.listen(port, (err) => {
     console.log('connected')
     conn = mysql.createConnection({
         host: 'localhost',
-        database: 'NAGGARO',
-        user: 'sid',
-        password: 'sid'
+        database: 'naggaro',
+        user: 'ayush',
+        password: 'ayush'
     })
     if (conn) console.log('db connected');
     if (!sessionStore) throw ('seession error');
