@@ -73,6 +73,11 @@ app.get('/vac', (req, res) => {
     res.render('vac')
 })
 
+
+app.get('/about', (req, res) => {
+    res.render('about')
+})
+
 app.post('/', (req, res) => {
     var email = req.body.email
     var pass = req.body.password
